@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matcher</title>
+</head>
+<body>
+    <h1>Regex101 Clone - Test Your Regular Expressions</h1>
+    <form method="POST" action="/">
+        <label for="test_string">Test String:</label><br>
+        <textarea name="test_string" rows="5" cols="50">{{ test_string }}</textarea><br><br>
+
+        <label for="regex">Regular Expression:</label><br>
+        <input type="text" name="regex" value="{{ regex }}"><br><br>
+
+        <button type="submit">Test Regex</button>
+    </form>
+
+    <h2>Matches:</h2>
+    <ul>
+        {% for match in matches %}
+            <li>{{ match }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    <h2>Email Validation</h2>
+    <form method="POST" action="/validate_email">
+        <label for="email">Enter Email:</label><br>
+        <input type="text" name="email"><br><br>
+        <button type="submit">Validate</button>
+    </form>
+</body>
+</html>
+
